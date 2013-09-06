@@ -30,7 +30,7 @@ var Promise = (function () {
   'use strict';
 
   var $Promise = global.$Promise,
-      INTERNAL = $Symbol('internal'),
+      INTERNAL = %CreateSymbol('internal'),
       ThenableCoercions;
 
   ThenableCoercions = $WeakMap();
