@@ -235,8 +235,9 @@ var Promise = (function () {
    */
   function PromiseConstructor(resolver) {
     if (!%_IsConstructCall()) {
+      return InitializePromise(this, resolver);
     }
-    return InitializePromise(this, resolver);
+    return new PromiseConstructor(resolver);
   }
 
   function PromiseThen(onFulfilled, onRejected) {
