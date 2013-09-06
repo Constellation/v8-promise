@@ -33,7 +33,7 @@ var Promise = (function () {
       INTERNAL = %CreateSymbol('internal'),
       ThenableCoercions;
 
-  ThenableCoercions = $WeakMap();
+  ThenableCoercions = %ObservationWeakMapCreate();
 
   function InitializePromise(promise, resolver) {
     if (!%_IsObject(promise)) {
